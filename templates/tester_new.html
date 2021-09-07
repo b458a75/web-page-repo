@@ -1,0 +1,35 @@
+
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Demo GetSelectOptionData</title>
+</head>
+<body>
+    <form name="demoForm">
+        <select name="demoSelect" onchange="showData()">
+            <option value="zilch">Select:</option>
+            <option value="A">Option 1</option>
+            <option value="B">Option 2</option>
+            <option value="C">Option 3</option>
+        </select>
+    </form>
+
+    <p id="firstP">&nbsp;</p>
+    <p id="secondP">&nbsp;</p>
+    <p id="thirdP">&nbsp;</p>
+
+    <script>
+    function showData() {
+        var theSelect = demoForm.demoSelect;
+        var firstP = document.getElementById('firstP');
+        var secondP = document.getElementById('secondP');
+        var thirdP = document.getElementById('thirdP');
+        firstP.innerHTML = ('This option\'s index number is: ' + theSelect.selectedIndex + ' (Javascript index numbers start at 0)');
+        secondP.innerHTML = ('Its value is: ' + theSelect[theSelect.selectedIndex].value);
+        thirdP.innerHTML = ('Its text is: ' + theSelect[theSelect.selectedIndex].text);
+    }
+     </script>
+</body>
+</html>
